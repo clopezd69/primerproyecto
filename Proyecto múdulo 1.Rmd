@@ -1,0 +1,60 @@
+---
+title: "Proyecto Módulo 1"
+author: "Carlos López"
+date: "2025-02-27"
+output: 
+  html_document:
+    theme: journal
+    toc: yes
+    toc_float:
+      collapsed: true
+---
+
+
+
+# PROYECTO FINAL
+
+## Este es el proyecto de examen del Módulo 1 del diplomado.
+
+
++ Llamo las librerías dplyr y readxl
+```{r}
+library(dplyr)
+library(readxl)
+```
+
++ Una vez que tengo agregado el archivo de Excel al espacio de trabajo, examino cuáles hojas tiene el libro con excel_sheets.
+
+```{r}
+excel_sheets("BASE CORDEROS.xlsx")
+```
++ Asigno el archivo al objeto excel_repro
+
+```{r}
+excel_repro <- read_excel("BASE CORDEROS.xlsx")
+```
+
+## Exploro la estructura la primera hoja. 
+
+```{r}
+excel_repro %>% str()
+```
+
+```{r}
+excel_repro %>% summary()
+```
+```{r}
+excel_repro %>% head()
+```
+```{r}
+excel_repro %>% tail()
+```
+## Ahora exploro otra hoja del libro. 
+
+```{r}
+excel_peso <- read_excel("BASE CORDEROS.xlsx", sheet = "PESO CORDEROS")
+```
+```{r}
+excel_peso %>% str()
+```
+
